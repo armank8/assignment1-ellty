@@ -1,0 +1,84 @@
+.frame {
+  max-width: 578px;
+  min-height: 794px;
+  background-color: #fff;
+  margin: 3rem auto;
+  position: relative;
+}
+.card {
+  width: 370px;
+  height: 326px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  margin: 0 auto;
+  position: absolute;
+  top: 85px;
+  left: 104px;
+  box-shadow: 0px 8px 15px #1414141f, 0px 0px 4px #1414141a;
+}
+
+.text-box {
+  padding: 8px 15px 8px 22px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* Checkbox styling */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  width: 23px;
+  height: 23px;
+  border:.7px solid #E3E3E3;
+  /* background-color: #E3E3E3; */
+  border-radius: 6px;
+  display: inline-block;
+  position: relative;
+  transition: background 0.2s ease-in-out;
+}
+
+.checkbox-container input:checked + .checkmark {
+  background-color: #4CAF50; /* Change color when checked */
+}
+
+.checkbox-container input:checked + .checkmark::after {
+  content: "✔";
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+}
+
+.divider{
+  margin: 10px 15px;
+  border: .7px solid #CDCDCD;
+}
+
+/* Button */
+.btn{
+  border: none;
+  color:#1F2128;
+  background-color: #FFCE22;
+  width: 90%;
+  height:40px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px 20px;
+}
+
