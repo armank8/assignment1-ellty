@@ -4,12 +4,12 @@
   background-color: #fff;
   margin: 3rem auto;
   position: relative;
+  box-shadow: 0px 8px 15px #1414141f, 0px 0px 4px #1414141a;
 }
 .card {
   width: 370px;
   height: 326px;
-  padding: 10px;
-  background-color: #fff;
+  padding: 10px 0;
   border: 1px solid #eeeeee;
   border-radius: 6px;
   margin: 0 auto;
@@ -23,7 +23,6 @@
 .checkbox-list {
   display: flex;
   flex-direction: column;
-  /* gap:10px; */
 }
 
 .checkbox-container {
@@ -31,8 +30,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   cursor: pointer;
+  padding: 8px 22px 8px 22px;
 }
 
 .checkbox-container input {
@@ -40,30 +39,28 @@
 }
 
 .custom-checkbox {
-  position: absolute;
-  /* left: 0; */
-  right:0;
+  /* padding-right: 16px; */
   width: 23px;
   height: 23px;
   border: 2px solid #E3E3E3;
   border-radius: 6px;
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.3s;
 }
 
+
 .checkbox-container.checked .custom-checkbox {
   background-color: #2469F6;
 }
 
-.custom-checkbox::after {
+/* .custom-checkbox::after {
   content: "";
   font-size: 20px;
   color: white;
   display: none;
-}
+} */
 
 .checkbox-container.checked .custom-checkbox::after {
   display: block;

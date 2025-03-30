@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import Button from './components/Button/Button';
 import checkIcon from "./assets/images/vector_141.png";
+import Divider from './components/Divider/Divider';
 
 function App() {
   const [checkedItems, setCheckedItems] = useState({});
@@ -32,13 +33,16 @@ function App() {
                 ></input>
 
                 <span className="custom-checkbox">
-                  {checkedItems[item] && <img src={checkIcon}></img>}
+                  {checkedItems[item] && <img src={checkIcon} className='check-icon'></img>}
                 </span>
 
               </label>
-              {item === "All Pages" && <hr className='divider'></hr>}
+              {item === "All Pages" && <Divider></Divider>}
             </React.Fragment>
           ))}
+
+          <Divider></Divider>
+          <Button></Button>
 
       </div>
 
