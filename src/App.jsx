@@ -1,36 +1,48 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Button from './components/Button/Button';
-import mark from "./assets/images/vector_141.svg";
+import checkIcon from "./assets/images/vector_141.png";
 
 function App() {
-  const [checked, setChecked] = useState(false);
-  console.log(checked);
+  const [checkedItems, setCheckedItems] = useState({});
+  console.log(checkedItems);
+  let items = ["All Pages", "Page 1", "Page 2", "Page 3", "Page 4",]
+
+  const handleOnChange = (item) => {
+    console.log(item);
+    setCheckedItems((prev) => ({
+      ...prev,
+      [item]: !prev[item],
+    }));
+  };
   return (
     <div className='frame'>
-      <div className="card">
-        <div className="text-box">
-          <p>All pages</p>
+      <div className="card checkbox-list">
+        {
+          items.map((item) => (
+            <React.Fragment key={item}>
+              <label className={`checkbox-container
+              ${checkedItems[item] ? "checked" : ""} `} >
 
-          <label className="checkbox-container">
-            <input type="checkbox"
-              checked={checked}
-              onChange={() => setChecked(!checked)}
-            ></input>
+                <span className='checkbox-label'>{item}</span>
 
-            <span className={`checkmark ${checked ? 'checkmark_clicked' : ''}`}>
-              <img className={`checkmark ${checked ? 'mark_img_op1' : 'mark_img'}`} src={mark} alt="" />
-            </span>
-          </label>
-          
+                <input type="checkbox"
+                  checked={!!checkedItems[item]}
+                  onChange={() => handleOnChange(item)}
+                ></input>
 
-        </div>
-        <div className="divider"></div>
-        <div className="divider"></div>
-        <Button></Button>
+                <span className="custom-checkbox">
+                  {checkedItems[item] && <img src={checkIcon}></img>}
+                </span>
+
+              </label>
+              {item === "All Pages" && <hr className='divider'></hr>}
+            </React.Fragment>
+          ))}
+
       </div>
 
-    </div>
+    </div >
   )
 }
 
